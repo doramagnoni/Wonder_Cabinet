@@ -1,14 +1,13 @@
 import json
-import gspread
-from google.auth import credentials
 
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-]
-CREDS = service_account.Credentials.from_service_account_file("creds.json", scopes=SCOPE)
-GSPREAD_CLIENT = gspread.authorize(CREDS)
+class WonderCabinetItem:
+    def __init__(self, name, description, origin, care_tips):
+        self.name = name
+        self.description = description
+        self.origin = origin
+        self.care_tips = care_tips
 
-
-
+class WonderCabinetInventory:
+    def __init__(self, file_path="wonder_cabinet_inventory.json"):
+        self.file_path = file_path
+        self.inventory = self._load_inventory()
