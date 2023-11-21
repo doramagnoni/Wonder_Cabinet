@@ -1,4 +1,16 @@
 import json
+import gspread
+from google.oauth2 import ServiceAccountCredentials
+
+#Scope and Credentials
+
+
+SCOPE = ["https://www.googleapis.com/auth/spreadsheets"]
+
+CREDS = ServiceAccountCredentials.from_json_keyfile_name("creds.json")
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open("wonder_index")
 
 class WonderCabinetItem:
     def __init__(self, name, description, origin, care_tips):
@@ -19,3 +31,4 @@ def load_inventory(self):
             return [WonderCabinetInventory(**item) for item in data]
     except FileNotFoundError:
         return []
+
