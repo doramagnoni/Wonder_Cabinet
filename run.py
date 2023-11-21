@@ -11,3 +11,11 @@ class WonderCabinetInventory:
     def __init__(self, file_path="wonder_cabinet_inventory.json"):
         self.file_path = file_path
         self.inventory = self._load_inventory()
+
+def load_inventory(self):
+    try:
+        with open(self.file_path, 'r') as file:
+            data = json.loads(file.read())
+            return [WonderCabinetInventory(**item) for item in data]
+    except FileNotFoundError:
+        return []
