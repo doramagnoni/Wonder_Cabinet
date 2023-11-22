@@ -1,16 +1,4 @@
 import json
-import gspread
-from google.oauth2 import ServiceAccountCredentials
-
-#Scope and Credentials
-
-
-SCOPE = ["https://www.googleapis.com/auth/spreadsheets"]
-
-CREDS = ServiceAccountCredentials.from_json_keyfile_name("creds.json")
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open("wonder_index")
 
 class WonderCabinetItem:
     def __init__(self, name, description, origin, care_tips):
@@ -63,3 +51,39 @@ def main():
         print("3. Search item")
         print("4. Display inventory")
         print("5. Quit")
+
+        choice = input("Enter you choice (1-5):")
+
+        if choice == '1':
+            name = input ("Enter item name: ")
+            description = input ("Enter item description: ")
+            origin = input ("Enter the origin of the item: ")
+            care_tips = input ("Enter any special care tips: ")
+            new_item = WonderCabinetInventory(name, description, origin, care_tips)
+            cabinet_inventory.add_item(new_item)
+            
+        elif choice == '2':
+            item_name = input ("Enter the name of the item to remove: ")
+            cabinet_inventory.remove_item(item_name)
+            
+        elif choice == '3':
+            keyword = input ("Enter a keyword to search for: ")
+            search_results = cabinet_inventory.search_items(keyword)
+            if search_results:
+                print("\nSearch Results:")
+                cabinet_inventory.display_inventory
+            else:
+                print("No items found with that keyword!")
+                
+        elif choice == '4':
+             print("\nCurrent Wonder Cabinet Inventory:")
+             cabinet_inventory.display_inventory()
+
+        elif choice == '5':
+            print("Exiting Wonder Cabinet Inventory System. Goodbuy!")
+            break
+        else:
+            print("Invalid choice. Please enter a number between 1 and 5.")
+        
+        if __name__ == "__main__":
+            main()
