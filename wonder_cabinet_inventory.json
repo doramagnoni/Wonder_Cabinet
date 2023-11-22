@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "name": "Monstera deliciosa",
+    "description": "The common name \"Swiss cheese plant\" is also used for the related species from the same genus, Monstera adansonii.The common name \"split-leaf philodendron\" is also used for the species Thaumatophyllum bipinnatifidum, although neither species are in the genus Philodendron.",
+    "origin": "The plant is native to tropical forests of southern Mexico, south to Panama. It has been introduced to many tropical areas, and has become a mildly invasive species in Hawaii, Seychelles, Ascension Island and the Society Islands. "
+  },
+  {
+    "name": "Strelitzia nicolai",
+    "description": "Strelitzia nicolai, commonly known as the wild banana or giant white bird of paradise, is a species of banana-like plants with erect woody stems reaching a height of 7\u20138 m ",
+    "origin": "Strelitzia nicolai is one of three larger Strelitzia species, the other two being tree-like S. caudata and S. alba. S. nicolai is restricted to evergreen coastal forest and thicket of eastern South Africa from the Gonubie northwards to southern Mozambique. It is also considered native to Mozambique, Botswana and Zimbabwe, and is reportedly naturalized in eastern Mexico (State of Veracruz)."
+  }
+]
