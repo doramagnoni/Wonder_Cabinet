@@ -15,15 +15,15 @@ class WonderCabinetInventory:
 def load_inventory(self):
     try:
         with open(self.file_path, "r") as file:
-            data = json.loads(file.read())
-            return [WonderCabinetInventory(**item) for item in data]
+            data = json.load(file)
+            return [WonderCabinetItem(**item) for item in data]
     except (FileNotFoundError, json.JSONDecodeError):
         return []
     
 def save_inventory(self):
     data = [{"name": item.name, "description": item.description, "origin": item.origin, "care_tips": item.care_tips}
             for item in self.inventory]
-    with open(self.file.path, "w") as file:
+    with open(self.file_path, "w") as file:
         json.dump(data, file, indent=2)
 
 def add_item(self, item):
@@ -32,7 +32,7 @@ def add_item(self, item):
 
 def remove_item(self, item_name):
     self.inventory = [item for item in self.inventory if item.name != item.name] 
-    self.safe_inventory()
+    self.save_inventory()
 
 def search_items(self, keyword): 
     return [item for item in self.inventory if keyword.lower() in item.name.lower()]
@@ -50,40 +50,40 @@ def main():
         print("2. Remove item")
         print("3. Search item")
         print("4. Display inventory")
-        print("5. Quit")
+        print("0. Quit")
 
-        choice = input("Enter you choice (1-5):")
+        choice = input("Enter you choice (0-4):")
 
-        if choice == '1':
-            name = input ("Enter item name: ")
-            description = input ("Enter item description: ")
-            origin = input ("Enter the origin of the item: ")
-            care_tips = input ("Enter any special care tips: ")
-            new_item = WonderCabinetInventory(name, description, origin, care_tips)
+        if choice == "1":
+            name = input("Enter item name: ")
+            description = input("Enter item description: ")
+            origin = input("Enter the origin of the item: ")
+            care_tips = input("Enter any special care tips: ")
+            new_item = WonderCabinetItem(name, description, origin, care_tips)
             cabinet_inventory.add_item(new_item)
             
-        elif choice == '2':
-            item_name = input ("Enter the name of the item to remove: ")
+        elif choice == "2":
+            item_name = input("Enter the name of the item to remove: ")
             cabinet_inventory.remove_item(item_name)
             
-        elif choice == '3':
-            keyword = input ("Enter a keyword to search for: ")
+        elif choice == "3":
+            keyword = input("Enter a keyword to search for: ")
             search_results = cabinet_inventory.search_items(keyword)
             if search_results:
                 print("\nSearch Results:")
-                cabinet_inventory.display_inventory
+                cabinet_inventory.display_inventory()
             else:
                 print("No items found with that keyword!")
                 
-        elif choice == '4':
+        elif choice == "4":
              print("\nCurrent Wonder Cabinet Inventory:")
              cabinet_inventory.display_inventory()
 
-        elif choice == '5':
-            print("Exiting Wonder Cabinet Inventory System. Goodbuy!")
+        elif choice == "0":
+            print("Exiting Wonder Cabinet Inventory System. Goodbye!")
             break
         else:
             print("Invalid choice. Please enter a number between 1 and 5.")
         
-        if __name__ == "__main__":
-            main()
+if __name__ == "__main__":
+    main()
