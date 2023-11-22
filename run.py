@@ -75,7 +75,7 @@ def main():
             if removed:
                 print(f"Item '{item_name}' removed successfully.")
             else:
-                print(" No Item  with the name '{item_name}' found in the inventory. Nothing was removed")
+                print(" No Item  with the name '{item_name}' found in the inventory. Nothing was removed.")
             
         elif choice == "3":
             keyword = input("Enter a keyword to search for: ")
