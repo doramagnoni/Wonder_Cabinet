@@ -67,14 +67,15 @@ def main():
             origin = input("Enter the origin of the item: ")
             new_item = WonderCabinetItem(name, description, origin)
             cabinet_inventory.add_item(new_item)
+            print(f"Item '{name}' successufully added to the inventory")
             
         elif choice == "2":
             item_name = input("Enter the name of the item to remove: ")
             removed = cabinet_inventory.remove_item(item_name)
             if removed:
-                print("Item removed successfully.")
+                print(f"Item '{item_name}' removed successfully.")
             else:
-                print("Item does not exist in the inventory.")
+                print(" No Item  with the name '{item_name}' found in the inventory. Nothing was removed")
             
         elif choice == "3":
             keyword = input("Enter a keyword to search for: ")
