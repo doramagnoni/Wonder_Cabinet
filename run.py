@@ -50,8 +50,10 @@ def main():
         print("3. Search item")
         print("4. Display inventory")
         print("0. Quit")
+        print("=" * 42)
+        
 
-        choice = input("Enter you choice (0-4):")
+        choice = input("Enter you choice (0-4): ")
 
         if choice == "1":
             while True:
