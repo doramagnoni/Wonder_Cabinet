@@ -29,7 +29,7 @@ def load_inventory(self):
         with open(self.file_path, "r") as file:
             data = json.loads(file.read())
             return [WonderCabinetInventory(**item) for item in data]
-    except FileNotFoundError:
+    except (FileNotFoundError, json.JSONDecodeError):
         return []
     
 def save_inventory(self):
@@ -52,3 +52,14 @@ def search_items(self, keyword):
 def display_inventory(self):
     for item in self.inventory:
         print(f"{item.name}: {item.description}: {item.origin}: {item.care_tips}:")
+        
+def main():
+    cabinet_inventory = WonderCabinetInventory()
+
+    while True:
+        print("\n===== Wonder Cabinet Inventory System =====")
+        print("1. Add item")
+        print("2. Remove item")
+        print("3. Search item")
+        print("4. Display inventory")
+        print("5. Quit")
