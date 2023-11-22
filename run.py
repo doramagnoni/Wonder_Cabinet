@@ -7,10 +7,12 @@ from google.oauth2 import ServiceAccountCredentials
 
 SCOPE = ["https://www.googleapis.com/auth/spreadsheets"]
 
-CREDS = ServiceAccountCredentials.from_json_keyfile_name("creds.json")
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open("wonder_index")
+try:
+    CREDS = ServiceAccountCredentials.from_json_keyfile_name("creds.json")
+    GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+
+except xceptions.DefaultCredentialsError:
+    print("Failed to load credentials. Check the path to your service account JSON file.")
 
 class WonderCabinetItem:
     def __init__(self, name, description, origin, care_tips):
@@ -18,6 +20,9 @@ class WonderCabinetItem:
         self.description = description
         self.origin = origin
         self.care_tips = care_tips
+
+
+        
 
 class WonderCabinetInventory:
     def __init__(self, file_path="wonder_cabinet_inventory.json"):
