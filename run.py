@@ -1,4 +1,5 @@
 import json
+import os
 
 class WonderCabinetItem:
     def __init__(self, name, description, origin):
@@ -70,7 +71,11 @@ def main():
             
         elif choice == "2":
             item_name = input("Enter the name of the item to remove: ")
-            cabinet_inventory.remove_item(item_name)
+            removed = cabinet_inventory.remove_item(item_name)
+            if removed:
+                print("Item removed successfully.")
+            else:
+                print("Item does not exist in the inventory.")
             
         elif choice == "3":
             keyword = input("Enter a keyword to search for: ")
