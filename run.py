@@ -1,4 +1,5 @@
 import json
+import os
 
 class WonderCabinetItem:
     def __init__(self, name, description, origin):
@@ -39,11 +40,16 @@ class WonderCabinetInventory:
     def display_inventory(self):
         for item in self.inventory:
             print(f"Name: {item.name}, Description: {item.description}, Origin: {item.origin}")
+
+def clear_screen():
+    """Clear the console screen."""
+    os.system('cls' if os.name == 'nt' else 'clear')
         
 def main():
     cabinet_inventory = WonderCabinetInventory()
 
     while True:
+        clear_screen()
         print("\n===== Wonder Cabinet Inventory System =====")
         print("1. Add item")
         print("2. Remove item")
@@ -72,6 +78,7 @@ def main():
             print(f"Item '{name}' successufully added to the inventory")
             
         elif choice == "2":
+            clear_screen()
             item_name = input("Enter the name of the item to remove: ")
             removed = cabinet_inventory.remove_item(item_name)
             if removed:
@@ -89,14 +96,17 @@ def main():
                 print("No items found with that keyword!")
                 
         elif choice == "4":
+             clear_screen()
              print("\nCurrent Wonder Cabinet Inventory:")
              cabinet_inventory.display_inventory()
+             input("Press Enter to continue...")
 
         elif choice == "0":
             print("Exiting Wonder Cabinet Inventory System. Goodbye!")
             break
         else:
             print("Invalid choice. Please enter a number between 0 and 4.")
+            input("Press Enter to continue...")
         
 if __name__ == "__main__":
     main()
