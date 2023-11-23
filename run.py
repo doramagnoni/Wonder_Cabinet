@@ -27,8 +27,12 @@ class WonderCabinetInventory:
             json.dump(data, file, indent=2)
 
     def add_item(self, item):
-        self.inventory.append(item)
-        self.save_inventory()
+        if any(existing_item.name.lower() == item.name.lower() for existing_item in self.inventory):
+            return False
+        else:
+            self.inventory.append(item)
+            self.save_inventory()
+            return True
 
     def remove_item(self, item_name):
         self.inventory = [item for item in self.inventory if item.name != item_name] 
@@ -63,25 +67,29 @@ def main():
 
         if choice == "1":
             while True:
-                name = input("Enter item name (or 'back' to return to the main menu): ").lower()
+                print("\n===== Add Item to the Inventory =====")
+                print("Enter 'back' to return to the main menu.")
+
+                name = input("Enter item name: ").lower()
+
                 if name == "back":
                     break
 
-                if not name:
+                elif not name:
                     print("Item name cannot be empty. Please enter a valid name.")
                 elif any(item.name.lower() == name.lower() for item in cabinet_inventory.inventory):
                     print("This item already exists in the inventory.")
                 else:
-                    break
-
-            if name != "back": #only proceed if "back" was not entered
-    
-                description = input("Enter item description: ")
-                origin = input("Enter the origin of the item: ")
-                new_item = WonderCabinetItem(name, description, origin)
-                cabinet_inventory.add_item(new_item)
-                print("Item successufully added to the inventory.")
-                input("Press Enter to continue...")
+                     description = input("Enter item description: ")
+                     origin = input("Enter the origin of the item: ")
+                     new_item = WonderCabinetItem(name, description, origin)
+                
+                     if cabinet_inventory.add_item(new_item):
+                        print("Item successufully added to the inventory.")
+                     else:
+                        print("Failed to add an item. Please, try again.")
+                     input("Press Enter to continue...")
+                     break
             
         elif choice == "2":
             clear_screen()
