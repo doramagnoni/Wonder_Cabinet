@@ -56,7 +56,7 @@ def main():
         print("3. Search item")
         print("4. Display inventory")
         print("0. Quit")
-        print("=" * 42)
+        print("=" * 43)
         
 
         choice = input("Enter you choice (0-4): ")
@@ -66,8 +66,10 @@ def main():
                 name = input("Enter item name: ")
                 if not name:
                     print("Item name cannot be empty. Please enter a valid name.")
+                    input("Press Enter to continue...")
                 elif any(item.name.lower() == name.lower() for item in cabinet_inventory.inventory):
                     print("This item already exists in the inventory.")
+                    input("Press Enter to continue...")
                 else:
                     break
 
@@ -75,16 +77,16 @@ def main():
             origin = input("Enter the origin of the item: ")
             new_item = WonderCabinetItem(name, description, origin)
             cabinet_inventory.add_item(new_item)
-            print(f"Item '{name}' successufully added to the inventory")
+            print("Item successufully added to the inventory.")
             
         elif choice == "2":
             clear_screen()
             item_name = input("Enter the name of the item to remove: ")
             removed = cabinet_inventory.remove_item(item_name)
             if removed:
-                print(f"Item '{item_name}' removed successfully.")
+                print("The item was removed successfully.")
             else:
-                print(" No Item  with the name '{item_name}' found in the inventory. Nothing was removed.")
+                print(" No such item found in the inventory. Nothing was removed.")
             
         elif choice == "3":
             keyword = input("Enter a keyword to search for: ")
@@ -94,6 +96,7 @@ def main():
                 cabinet_inventory.display_inventory()
             else:
                 print("No items found with that keyword!")
+                input("Press Enter to continue...")
                 
         elif choice == "4":
              clear_screen()
