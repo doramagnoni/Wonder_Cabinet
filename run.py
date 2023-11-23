@@ -100,15 +100,16 @@ def main():
                 print("The item was removed successfully.")
             else:
                 print("No such item found in the inventory. Nothing was removed.")
-            input("Press Enter to continue...")
 
             
         elif choice == "3":
+            clear_screen()
             keyword = input("Enter a keyword to search for: ")
             search_results = cabinet_inventory.search_items(keyword)
             if search_results:
                 print("\nSearch Results:")
-                cabinet_inventory.display_inventory()
+                for item in search_results:
+                    print(f"Name: {item.name}, Description: {item.description}, Origin: {item.origin} ")
             else:
                 print("No items found with that keyword!")
                 
