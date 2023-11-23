@@ -59,17 +59,15 @@ def main():
         print("=" * 43)
         
 
-        choice = input("Enter you choice (0-4): ")
+        choice = input("Enter you choice (0-4): ").lower()
 
         if choice == "1":
             while True:
                 name = input("Enter item name: ")
                 if not name:
                     print("Item name cannot be empty. Please enter a valid name.")
-                    input("Press Enter to continue...")
                 elif any(item.name.lower() == name.lower() for item in cabinet_inventory.inventory):
                     print("This item already exists in the inventory.")
-                    input("Press Enter to continue...")
                 else:
                     break
 
@@ -78,6 +76,7 @@ def main():
             new_item = WonderCabinetItem(name, description, origin)
             cabinet_inventory.add_item(new_item)
             print("Item successufully added to the inventory.")
+            input("Press Enter to continue...")
             
         elif choice == "2":
             clear_screen()
@@ -86,7 +85,7 @@ def main():
             if removed:
                 print("The item was removed successfully.")
             else:
-                print(" No such item found in the inventory. Nothing was removed.")
+                print("No such item found in the inventory. Nothing was removed.")
             
         elif choice == "3":
             keyword = input("Enter a keyword to search for: ")
