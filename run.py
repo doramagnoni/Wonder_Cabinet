@@ -88,7 +88,6 @@ def main():
                         print("Item successufully added to the inventory.")
                      else:
                         print("Failed to add an item. Please, try again.")
-                     input("Press Enter to continue...")
                      break
             
         elif choice == "2":
