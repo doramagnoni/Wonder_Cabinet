@@ -35,8 +35,13 @@ class WonderCabinetInventory:
             return True
 
     def remove_item(self, item_name):
+        initial_lenght = len(self.inventory)
         self.inventory = [item for item in self.inventory if item.name != item_name] 
-        self.save_inventory()
+        if len(self.inventory) < initial_lenght:
+            self.save_inventory()
+            return True
+        else:
+            return False
 
     def search_items(self, keyword): 
         return [item for item in self.inventory if keyword.lower() in item.name.lower()]
