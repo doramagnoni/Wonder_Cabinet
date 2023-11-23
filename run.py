@@ -63,7 +63,10 @@ def main():
 
         if choice == "1":
             while True:
-                name = input("Enter item name: ")
+                name = input("Enter item name (or 'back' to return to the main menu): ").lower()
+                if name == "back":
+                    break
+
                 if not name:
                     print("Item name cannot be empty. Please enter a valid name.")
                 elif any(item.name.lower() == name.lower() for item in cabinet_inventory.inventory):
@@ -71,12 +74,14 @@ def main():
                 else:
                     break
 
-            description = input("Enter item description: ")
-            origin = input("Enter the origin of the item: ")
-            new_item = WonderCabinetItem(name, description, origin)
-            cabinet_inventory.add_item(new_item)
-            print("Item successufully added to the inventory.")
-            input("Press Enter to continue...")
+            if name != "back": #only proceed if "back" was not entered
+    
+                description = input("Enter item description: ")
+                origin = input("Enter the origin of the item: ")
+                new_item = WonderCabinetItem(name, description, origin)
+                cabinet_inventory.add_item(new_item)
+                print("Item successufully added to the inventory.")
+                input("Press Enter to continue...")
             
         elif choice == "2":
             clear_screen()
