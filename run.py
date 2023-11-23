@@ -95,10 +95,13 @@ def main():
             clear_screen()
             item_name = input("Enter the name of the item to remove: ")
             removed = cabinet_inventory.remove_item(item_name)
+
             if removed:
                 print("The item was removed successfully.")
             else:
                 print("No such item found in the inventory. Nothing was removed.")
+            input("Press Enter to continue...")
+
             
         elif choice == "3":
             keyword = input("Enter a keyword to search for: ")
@@ -108,20 +111,19 @@ def main():
                 cabinet_inventory.display_inventory()
             else:
                 print("No items found with that keyword!")
-                input("Press Enter to continue...")
                 
         elif choice == "4":
              clear_screen()
              print("\nCurrent Wonder Cabinet Inventory:")
              cabinet_inventory.display_inventory()
-             input("Press Enter to continue...")
+             
 
         elif choice == "0":
             print("Exiting Wonder Cabinet Inventory System. Goodbye!")
             break
         else:
             print("Invalid choice. Please enter a number between 0 and 4.")
-            input("Press Enter to continue...")
+        input("Press Enter to continue...")
         
 if __name__ == "__main__":
     main()
