@@ -72,6 +72,7 @@ def main():
 
         if choice == "1":
             while True:
+                clear_screen()
                 print("\n===== Add Item to the Inventory =====")
                 print("Enter 'back' to return to the main menu.")
 
