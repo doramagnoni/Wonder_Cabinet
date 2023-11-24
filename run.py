@@ -68,7 +68,7 @@ def main():
         print("=" * 43)
         
 
-        choice = input("Enter you choice (0-4): ").lower()
+        choice = input("\nEnter you choice (0-4): ").lower()
 
         if choice == "1":
             while True:
