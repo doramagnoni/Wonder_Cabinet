@@ -35,9 +35,9 @@ class WonderCabinetInventory:
             return True
 
     def remove_item(self, item_name):
-        initial_lenght = len(self.inventory)
+        initial_length = len(self.inventory)
         self.inventory = [item for item in self.inventory if item.name != item_name] 
-        if len(self.inventory) < initial_lenght:
+        if len(self.inventory) < initial_length:
             self.save_inventory()
             return True
         else:
@@ -74,7 +74,7 @@ def main():
             while True:
                 clear_screen()
                 print("\n===== Add Item to the Inventory =====")
-                print("Enter 'back' to return to the main menu.")
+                print("\nEnter 'back' to return to the main menu.")
 
                 name = input("Enter item name: ").lower()
 
@@ -98,7 +98,7 @@ def main():
             
         elif choice == "2":
             clear_screen()
-            item_name = input("Enter the name of the item to remove: ")
+            item_name = input("Enter the name of the item to remove: ").lower()
             removed = cabinet_inventory.remove_item(item_name)
 
             if removed:
@@ -109,7 +109,7 @@ def main():
             
         elif choice == "3":
             clear_screen()
-            keyword = input("Enter a keyword to search for: ")
+            keyword = input("Enter a keyword to search for: ").lower()
             search_results = cabinet_inventory.search_items(keyword)
             if search_results:
                 print("\nSearch Results:")
