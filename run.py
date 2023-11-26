@@ -48,7 +48,7 @@ class WonderCabinetInventory:
 
     def display_inventory(self):
         for item in self.inventory:
-            print(f"\nName: {item.name}, Description: {item.description}, Origin: {item.origin}")
+            print(f"\n\033[1mName:\033[0m {item.name}, \033[1mDescription:\033[0m {item.description}, \033[1mOrigin:\033[0m {item.origin}")
 
 def clear_screen():
     """Clear the console screen."""
