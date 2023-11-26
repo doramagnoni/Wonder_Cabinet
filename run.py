@@ -83,6 +83,8 @@ def main():
 
                 elif not name:
                     print("Item name cannot be empty. Please enter a valid name.")
+                    input("Press Enter to continue...")
+                    
                 elif any(item.name.lower() == name.lower() for item in cabinet_inventory.inventory):
                     print("This item already exists in the inventory.")
                 else:
@@ -95,6 +97,7 @@ def main():
                      else:
                         print("Failed to add an item. Please, try again.")
                      break
+                
             
         elif choice == "2":
             clear_screen()
