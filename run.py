@@ -87,6 +87,7 @@ def main():
                     
                 elif any(item.name.lower() == name.lower() for item in cabinet_inventory.inventory):
                     print("This item already exists in the inventory.")
+                    input("Press Enter to continue...")
                 else:
                      description = input("Enter item description: ")
                      origin = input("Enter the origin of the item: ")
