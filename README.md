@@ -3,6 +3,35 @@
 The Wonder Cabinet Inventory System is a Python program that allows users to manage an inventory of items in a wonder cabinet. It provides functionality to add, remove, search, and display items in the inventory.
 
 !
+## Table of Contents
+
+1. Wonder Cabinet Inventory System
+- User Experience (UX) Design for Wonder Cabinet Inventory System
+- View live website in Heroku
+- User Stories
+- Interaction Flow
+   - Main Menu
+   - Add Item
+   - Remove Item
+   - Search Item
+   - Display Inventory
+- Design Considerations
+
+2. Technologies Used
+
+3. Testing
+- Functionality Testing
+- Code Validation
+   - PEP 8 Style Checking
+
+4. Deployment
+- Prerequisites
+- Steps
+- Run Locally
+
+5. Credits
+6. Screenshots
+
 
 ## User Experience (UX) Design for Wonder Cabinet Inventory System
 
@@ -10,7 +39,7 @@ Overview
 The Wonder Cabinet Inventory System is designed to provide a simple and intuitive user experience for managing a collection of items in a wonder cabinet. The user interface is text-based, running in the console, making it accessible and straightforward to use.
 
 
-## [View life website in github pages](https://doramagnoni.github.io/plantcareQuiz/)
+## [View life website In Heroku](https://wonder-index-96dba1f69579.herokuapp.com/)
 ---
 
 
@@ -111,9 +140,8 @@ Before deploying the Wonder Cabinet Inventory System, I used PEP 8 Style Checkin
 ### PEP 8 Style Checking
 
 To check for PEP 8 compliance I USED `flake8`, by running:
-
-```bash
 pip install flake8
+
 
 
 [Back to Table of contents](#table-of-contents)
@@ -159,9 +187,10 @@ ___
 
 * Ideas and knowledge library
       
-    * I would like to express my gratitude to my mentor Adegbenga Adeye who helped me extensively to fix numerous problems with my code and supported me very patiently throughout all the stages of the creation of this portfolio. 
+* I would like to express my gratitude to my mentor Adegbenga Adeye who helped me extensively to fix numerous problems with my code and supported me very patiently throughout all the stages of the creation of this portfolio. 
 
 ___
+[Back to Table of contents](#table-of-contents)
 
 # Screenshots
 
