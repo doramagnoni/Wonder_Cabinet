@@ -197,20 +197,29 @@ ___
 
 <img width="430" alt="Screenshot 2023-11-27 at 00 16 53" src="https://github.com/doramagnoni/Wonder_Cabinet/assets/137621206/9cb3e072-d81d-4649-b22a-ecafe73bcc59">
 
+
 <img width="383" alt="Screenshot 2023-11-27 at 00 17 09" src="https://github.com/doramagnoni/Wonder_Cabinet/assets/137621206/701cd847-e4ae-410f-8f2d-574aa815f68c">
+
 
 <img width="504" alt="Screenshot 2023-11-27 at 00 17 20" src="https://github.com/doramagnoni/Wonder_Cabinet/assets/137621206/ad2d28fe-0a4b-42f1-952a-9810107cd2f6">
 
+
 <img width="397" alt="Screenshot 2023-11-27 at 00 17 44" src="https://github.com/doramagnoni/Wonder_Cabinet/assets/137621206/10c708bd-269b-4af2-a690-3ed87fab7b8d">
+
 
 <img width="643" alt="Screenshot 2023-11-27 at 00 20 05" src="https://github.com/doramagnoni/Wonder_Cabinet/assets/137621206/5ac25243-e60b-4069-939f-2805b5e77724">
 
+
 <img width="556" alt="Screenshot 2023-11-27 at 00 20 59" src="https://github.com/doramagnoni/Wonder_Cabinet/assets/137621206/8c0fe04b-97e9-4082-8a9c-70f059bab9a1">
+
 
 <img width="494" alt="Screenshot 2023-11-27 at 00 22 32" src="https://github.com/doramagnoni/Wonder_Cabinet/assets/137621206/eab2319a-5e91-4bef-8d6a-939bedf6d474">
 
+
 <img width="729" alt="Screenshot 2023-11-27 at 00 22 47" src="https://github.com/doramagnoni/Wonder_Cabinet/assets/137621206/76dfb6df-2798-4d7a-992d-48ac3f0a7879">
 
+
 <img width="725" alt="Screenshot 2023-11-27 at 00 23 36" src="https://github.com/doramagnoni/Wonder_Cabinet/assets/137621206/7acf072a-728e-496d-b835-9063023f364c">
+
 
 <img width="470" alt="Screenshot 2023-11-27 at 00 23 49" src="https://github.com/doramagnoni/Wonder_Cabinet/assets/137621206/c0d4495f-d7ce-4c78-bc3d-8d0c44915ae2">
